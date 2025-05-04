@@ -1,0 +1,24 @@
+{
+  "name": "auto-fill",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "compile": "tsc --noEmit",
+    "dev": "vite",
+    "zip:chrome": "bun run build:chrome && tsx ./zip.ts",
+    "zip:firefox": "bun run build:firefox && tsx ./zip.ts",
+    "build:chrome": "cross-env TARGET=chrome vite build",
+    "build:firefox": "cross-env TARGET=firefox vite build"
+  },
+  "devDependencies": {
+    "@types/webextension-polyfill": "^0.10.0",
+    "cross-env": "^7.0.3",
+    "tsx": "^4.19.4",
+    "typescript": "~5.6.3",
+    "vite": "^5.0.0",
+    "vite-plugin-web-extension": "^4.0.0",
+    "webextension-polyfill": "^0.10.0",
+    "zip-a-folder": "^3.1.9"
+  }
+}

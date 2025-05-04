@@ -1,0 +1,17 @@
+.inventory__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.inventory__increment-button,
+.inventory__decrement-button {
+  background: #3f4a59;
+  font-size: 14px;
+  padding: 4px 10px;
+  padding: 7px 20px;
+  border: none;
+  outline: none;
+  color: white;
+}
