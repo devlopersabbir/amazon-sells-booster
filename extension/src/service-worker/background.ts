@@ -1,7 +1,13 @@
 import browser from "webextension-polyfill";
 
-console.log("Hello from the background!");
+browser.runtime.onMessage.addListener((message: any) => {
+  if (message.action === "open-options") {
+    browser.runtime.openOptionsPage();
+  }
+});
 
 browser.runtime.onInstalled.addListener((details) => {
-  console.log("Extension installed:", details);
+  if (details.reason === "install") {
+    browser.runtime.openOptionsPage();
+  }
 });
