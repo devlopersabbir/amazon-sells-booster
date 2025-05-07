@@ -1,9 +1,9 @@
 import { Dispatch, SetStateAction, useState } from "react";
-import { PlusCircle, Users, X } from "lucide-react";
+import { MonitorCheck, PlusCircle, Users, X } from "lucide-react";
 
 export type Props = {
-  activeMenuItem: "groups" | "add";
-  setActiveMenuItem: Dispatch<SetStateAction<"groups" | "add">>;
+  activeMenuItem: "groups" | "add" | "price";
+  setActiveMenuItem: Dispatch<SetStateAction<"groups" | "add" | "price">>;
 };
 const Sidebar = ({ activeMenuItem, setActiveMenuItem }: Props) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -53,6 +53,17 @@ const Sidebar = ({ activeMenuItem, setActiveMenuItem }: Props) => {
             >
               <PlusCircle size={20} />
               <span>Add New Group</span>
+            </button>
+            <button
+              className={`flex items-center space-x-2 w-full p-3 rounded-md cursor-pointer ${
+                activeMenuItem === "price"
+                  ? "bg-gray-700 text-blue-400"
+                  : "hover:bg-gray-700"
+              }`}
+              onClick={() => setActiveMenuItem("price")}
+            >
+              <MonitorCheck size={20} />
+              <span>Set Inc & Dec Price</span>
             </button>
           </nav>
         </div>

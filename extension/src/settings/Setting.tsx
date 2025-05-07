@@ -3,10 +3,12 @@ import { useEffect, useState } from "react";
 import Sidebar, { Props } from "./_components/sidebar.js";
 import { useGroups } from "../hooks/useGroups.js";
 import { AsinGroup } from "../@types/index.js";
+import DisplayGroup from "./_components/display-group.js";
+import { toast } from "sonner";
+import CreatePrice from "./_components/create-price.js";
 
 const Setting = () => {
-  const { groups, addGroup, deleteGroup, updateGroup, fetchGroups } =
-    useGroups();
+  const { groups, addGroup, updateGroup, fetchGroups } = useGroups();
   const [selectedGroup, setSelectedGroup] = useState<AsinGroup | null>(null);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -38,11 +40,13 @@ const Setting = () => {
       });
       setSelectedGroup(null);
       setActiveMenuItem("groups");
+      toast.success("Group update successfully");
     } else {
       await addGroup({
         group_name: groupName,
         asins: newAsins,
       });
+      toast.success("New Group Added");
     }
     setGroupName("");
     setAsin("");
@@ -51,7 +55,7 @@ const Setting = () => {
 
   if (!groups) return <h1>no data found!</h1>;
   return (
-    <div className="flex h-screen bg-gray-900 text-gray-100 ">
+    <div className="flex h-screen bg-gray-900 text-gray-100 fixed w-full">
       <Sidebar
         activeMenuItem={activeMenuItem}
         setActiveMenuItem={setActiveMenuItem}
@@ -65,66 +69,16 @@ const Setting = () => {
               : "Create a New Group"}
           </h1>
 
-          <div className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700">
+          <div className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700 max-h-[80vh] overflow-y-auto scroll-smooth">
             {activeMenuItem === "groups" && !selectedGroup ? (
-              <div className="space-y-6 overflow-y-scroll h-auto scroll-smooth scroll-p-1.5">
-                {!groups ? (
-                  <p className="text-gray-400">
-                    No groups yet. Add your first group!
-                  </p>
-                ) : (
-                  groups &&
-                  groups.map((group) => (
-                    <div
-                      key={group.id}
-                      className="border-b border-gray-700 last:border-0 pb-4 last:pb-0"
-                    >
-                      <div className="flex justify-between w-full">
-                        <h2 className="text-xl font-semibold text-gray-100">
-                          {group.group_name} <b>({group.asins.length})</b>
-                        </h2>
-                        <div className="flex space-x-2">
-                          <button
-                            onClick={() => {
-                              setSelectedGroup(group);
-                              setIsEditing(true);
-                              setGroupName(group.group_name);
-                              setAsin(group.asins.join(", "));
-                            }}
-                            className="p-1.5 bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
-                            title="Edit group"
-                          >
-                            <Edit size={16} />
-                          </button>
-                          <button
-                            onClick={async () => {
-                              if (!group.id) return;
-                              await deleteGroup(group.id);
-                            }}
-                            className="p-1.5 bg-red-600 rounded-md hover:bg-red-700 transition-colors"
-                            title="Delete group"
-                          >
-                            <Trash2 size={16} />
-                          </button>
-                        </div>
-                      </div>
-
-                      <div className="flex flex-wrap gap-2 mt-3">
-                        {group.asins.map((asin, index) => (
-                          <span
-                            key={index}
-                            className="inline-flex items-center px-3 py-1 bg-gray-700 text-sm rounded-full"
-                          >
-                            <Tag size={14} className="mr-1 text-blue-400" />
-                            {asin}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  ))
-                )}
-              </div>
-            ) : (
+              <DisplayGroup
+                groups={groups}
+                setAsin={setAsin}
+                setGroupName={setGroupName}
+                setIsEditing={setIsEditing}
+                setSelectedGroup={setSelectedGroup}
+              />
+            ) : activeMenuItem === "add" ? (
               <div className="max-w-md mx-auto">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
@@ -172,6 +126,8 @@ const Setting = () => {
                   </button>
                 </form>
               </div>
+            ) : (
+              <CreatePrice setActiveMenuItem={setActiveMenuItem} />
             )}
           </div>
         </div>

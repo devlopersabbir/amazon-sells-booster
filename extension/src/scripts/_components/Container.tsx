@@ -17,27 +17,33 @@ import {
 } from "../../components/ui/drawer.js";
 import { ActionType, AsinGroup } from "../../@types/index.js";
 import { useGroups } from "../../hooks/useGroups.js";
-import { inc_decHandler } from "../index.js";
+import { inc_dec_all, inc_decHandler } from "../index.js";
 import Browser from "webextension-polyfill";
 
 const Container = () => {
-  const { groups } = useGroups();
+  const { groups, price } = useGroups();
   const [open, setOpen] = useState(false);
   const [actionType, setActionType] = useState<ActionType>("increment");
   const [selectedGroups, setSelectedGroups] = useState<AsinGroup[]>([]);
+  const [allSelected, setAllSelected] = useState(false);
+  const [isGroup, setIsGroup] = useState(false);
 
   const handleConfirm = () => {
-    // Merge all asins arrays into one
+    if (isGroup) {
+      inc_dec_all(actionType, price);
+      setOpen(false);
+      return;
+    }
+
     const arr: AsinGroup["asins"] = selectedGroups.flatMap(
       (group) => group.asins
     );
+    if (!arr) return;
     if (actionType === "increment") {
-      inc_decHandler("increment", arr);
+      inc_decHandler("increment", arr, price);
     } else {
-      inc_decHandler("decrement", arr);
+      inc_decHandler("decrement", arr, price);
     }
-
-    // Close drawer and reset selections if needed
     setOpen(false);
   };
 
@@ -66,6 +72,7 @@ const Container = () => {
         <ArrowDownWideNarrow className="h-4 w-4" />
         Decrement
       </Button>
+
       <Button
         variant="link"
         onClick={() => {
@@ -77,7 +84,11 @@ const Container = () => {
       </Button>
 
       <Drawer open={open} onOpenChange={setOpen}>
-        <DrawerContent className="dark bg-gray-950 text-gray-200">
+        <DrawerContent
+          className="dark bg-gray-950 text-gray-200"
+          aria-description="group selection"
+          aria-describedby={"group selection"}
+        >
           <DrawerHeader>
             <DrawerTitle>
               {actionType === "increment" ? "Increment" : "Decrement"} Items
@@ -85,6 +96,43 @@ const Container = () => {
           </DrawerHeader>
 
           <div className="px-4 py-2 max-h-[60vh] overflow-y-auto">
+            {groups.length > 0 && (
+              <div className="mb-4 border border-gray-700 rounded-lg p-3 bg-gray-900 flex justify-between items-center">
+                <div className="flex items-center space-x-2 mb-2">
+                  <Checkbox
+                    id="select-all-groups"
+                    checked={allSelected}
+                    onCheckedChange={(checked: boolean) => {
+                      setAllSelected(checked);
+                      setSelectedGroups(checked ? [...groups] : []);
+                    }}
+                  />
+                  <label
+                    htmlFor="select-all-groups"
+                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  >
+                    Select All Groups
+                  </label>
+                </div>
+                <div className="flex items-center space-x-2 mb-2">
+                  <Checkbox
+                    id="without-condition"
+                    checked={isGroup}
+                    onCheckedChange={(checked: boolean) => {
+                      console.log("checked value: ", checked);
+                      setIsGroup(!!checked);
+                    }}
+                  />
+                  <label
+                    htmlFor="without-condition"
+                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  >
+                    Without Any condition update all
+                  </label>
+                </div>
+              </div>
+            )}
+
             {groups &&
               groups.map((group) => (
                 <div
@@ -99,16 +147,23 @@ const Container = () => {
                       )}
                       onCheckedChange={(checked: boolean) => {
                         setSelectedGroups((prev) => {
+                          let updatedGroups: AsinGroup[];
                           if (checked) {
-                            // Add the group only if not already added
                             if (!prev.some((g) => g.id === group.id)) {
-                              return [...prev, group];
+                              updatedGroups = [...prev, group];
+                            } else {
+                              updatedGroups = prev;
                             }
-                            return prev;
                           } else {
-                            // Remove the group
-                            return prev.filter((g) => g.id !== group.id);
+                            updatedGroups = prev.filter(
+                              (g) => g.id !== group.id
+                            );
                           }
+
+                          setAllSelected(
+                            updatedGroups.length === groups.length
+                          );
+                          return updatedGroups;
                         });
                       }}
                     />
@@ -139,7 +194,11 @@ const Container = () => {
             <DrawerClose asChild>
               <Button variant="outline">Cancel</Button>
             </DrawerClose>
-            <Button onClick={handleConfirm}>
+            <Button
+              onClick={() => {
+                handleConfirm();
+              }}
+            >
               Confirm{" "}
               {actionType === "increment" ? (
                 <ArrowUpNarrowWide className="ml-1 h-4 w-4" />

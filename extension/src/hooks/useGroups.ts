@@ -5,6 +5,7 @@ import { storageAPI } from "../services/storage-service.js";
 
 export function useGroups() {
   const [groups, setGroups] = useState<AsinGroup[]>([]);
+  const [price, setPrice] = useState<number>(0.1);
 
   // Fetch groups from storage
   const fetchGroups = async () => {
@@ -15,10 +16,22 @@ export function useGroups() {
       setGroups([]);
     }
   };
+  const fetchPrice = async () => {
+    const data = await storageAPI.get(["price"]);
+    setPrice(Number(data?.price));
+    return Number(data.price);
+  };
 
   useEffect(() => {
     fetchGroups();
+    fetchPrice();
   }, []);
+
+  // update price
+  const updatePrice = async (price: number) => {
+    await storageAPI.set({ price });
+    setPrice(price);
+  };
 
   // Add a new group (append to existing)
   const addGroup = async (newGroup: Omit<AsinGroup, "id">) => {
@@ -58,9 +71,12 @@ export function useGroups() {
 
   return {
     groups,
+    price,
     addGroup,
     deleteGroup,
     updateGroup,
     fetchGroups,
+    fetchPrice,
+    updatePrice,
   };
 }

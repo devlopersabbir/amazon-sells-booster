@@ -6,8 +6,9 @@ browser.runtime.onMessage.addListener((message: any) => {
   }
 });
 
-browser.runtime.onInstalled.addListener((details) => {
+browser.runtime.onInstalled.addListener(async (details) => {
   if (details.reason === "install") {
-    browser.runtime.openOptionsPage();
+    await browser.storage.local.set({ price: 0.1 });
+    await browser.runtime.openOptionsPage();
   }
 });
