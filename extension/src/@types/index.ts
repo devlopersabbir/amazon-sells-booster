@@ -4,3 +4,10 @@ export type AsinGroup = {
   asins: string[];
 };
 export type ActionType = "increment" | "decrement";
+
+export type HandlerOptions = {
+  type: ActionType;
+  INC_DEC_VALUE: number;
+  asins?: AsinGroup["asins"];
+  isAll?: boolean;
+};

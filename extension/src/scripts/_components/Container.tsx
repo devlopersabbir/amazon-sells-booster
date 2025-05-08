@@ -11,13 +11,14 @@ import {
   Drawer,
   DrawerClose,
   DrawerContent,
+  DrawerDescription,
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
 } from "../../components/ui/drawer.js";
 import { ActionType, AsinGroup } from "../../@types/index.js";
 import { useGroups } from "../../hooks/useGroups.js";
-import { inc_dec_all, inc_decHandler } from "../index.js";
+import { handleKatInputUpdate } from "../index.js";
 import Browser from "webextension-polyfill";
 
 const Container = () => {
@@ -30,7 +31,11 @@ const Container = () => {
 
   const handleConfirm = () => {
     if (isGroup) {
-      inc_dec_all(actionType, price);
+      handleKatInputUpdate({
+        type: actionType,
+        INC_DEC_VALUE: price,
+        isAll: true,
+      });
       setOpen(false);
       return;
     }
@@ -40,9 +45,17 @@ const Container = () => {
     );
     if (!arr) return;
     if (actionType === "increment") {
-      inc_decHandler("increment", arr, price);
+      handleKatInputUpdate({
+        type: "increment",
+        INC_DEC_VALUE: price,
+        asins: arr,
+      });
     } else {
-      inc_decHandler("decrement", arr, price);
+      handleKatInputUpdate({
+        type: "decrement",
+        INC_DEC_VALUE: price,
+        asins: arr,
+      });
     }
     setOpen(false);
   };
@@ -93,14 +106,36 @@ const Container = () => {
             <DrawerTitle>
               {actionType === "increment" ? "Increment" : "Decrement"} Items
             </DrawerTitle>
+            <DrawerDescription>
+              You can increment and decrement your price from here...
+            </DrawerDescription>
           </DrawerHeader>
 
           <div className="px-4 py-2 max-h-[60vh] overflow-y-auto">
+            <div className="w-full justify-end items-end">
+              <div className="flex flex-row space-x-2 mb-2 justify-end items-end">
+                <Checkbox
+                  id="without-condition"
+                  checked={isGroup}
+                  disabled={selectedGroups.length > 0}
+                  onCheckedChange={(checked: boolean) => {
+                    setIsGroup(!!checked);
+                  }}
+                />
+                <label
+                  htmlFor="without-condition"
+                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                >
+                  Update all
+                </label>
+              </div>
+            </div>
             {groups.length > 0 && (
               <div className="mb-4 border border-gray-700 rounded-lg p-3 bg-gray-900 flex justify-between items-center">
                 <div className="flex items-center space-x-2 mb-2">
                   <Checkbox
                     id="select-all-groups"
+                    disabled={isGroup}
                     checked={allSelected}
                     onCheckedChange={(checked: boolean) => {
                       setAllSelected(checked);
@@ -114,22 +149,6 @@ const Container = () => {
                     Select All Groups
                   </label>
                 </div>
-                <div className="flex items-center space-x-2 mb-2">
-                  <Checkbox
-                    id="without-condition"
-                    checked={isGroup}
-                    onCheckedChange={(checked: boolean) => {
-                      console.log("checked value: ", checked);
-                      setIsGroup(!!checked);
-                    }}
-                  />
-                  <label
-                    htmlFor="without-condition"
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >
-                    Without Any condition update all
-                  </label>
-                </div>
               </div>
             )}
 
@@ -141,6 +160,7 @@ const Container = () => {
                 >
                   <div className="flex items-center space-x-2 mb-2">
                     <Checkbox
+                      disabled={isGroup}
                       id={`group-${group.id}`}
                       checked={selectedGroups.some(
                         (selectedGroup) => selectedGroup.id === group.id

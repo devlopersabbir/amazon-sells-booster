@@ -11,7 +11,22 @@ export class StorageService<Value> {
   constructor(key: string, defaultValue?: Value) {
     this._key = key;
     defaultValue && (this._defaultValue = defaultValue);
+    this._initChangeListeners();
   }
+  _initChangeListeners = () => {
+    storageAPI.onChanged.addListener((changes) => {
+      // if changes is match with our key then get the new value and old value from it.
+      if (changes[this._key]) {
+        this._changeListeners.forEach((listener) => {
+          const { newValue, oldValue } = changes[this._key];
+          listener(
+            (newValue ?? this._defaultValue!) as Value,
+            oldValue as Value
+          );
+        });
+      }
+    });
+  };
 
   get key(): string {
     return this._key;
