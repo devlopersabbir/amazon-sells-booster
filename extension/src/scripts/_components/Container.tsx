@@ -20,9 +20,12 @@ import { ActionType, AsinGroup } from "../../@types/index.js";
 import { useGroups } from "../../hooks/useGroups.js";
 import { handleKatInputUpdate } from "../index.js";
 import Browser from "webextension-polyfill";
+import { useAppSettings } from "../../hooks/useAppSettings.js";
+import { toast } from "sonner";
 
 const Container = () => {
-  const { groups, price } = useGroups();
+  // const { groups, price } = useGroups();
+  const { groups, price } = useAppSettings();
   const [open, setOpen] = useState(false);
   const [actionType, setActionType] = useState<ActionType>("increment");
   const [selectedGroups, setSelectedGroups] = useState<AsinGroup[]>([]);
@@ -30,6 +33,7 @@ const Container = () => {
   const [isGroup, setIsGroup] = useState(false);
 
   const handleConfirm = () => {
+    if (!price) return toast.error("No price found!");
     if (isGroup) {
       handleKatInputUpdate({
         type: actionType,
@@ -130,7 +134,7 @@ const Container = () => {
                 </label>
               </div>
             </div>
-            {groups.length > 0 && (
+            {groups && (
               <div className="mb-4 border border-gray-700 rounded-lg p-3 bg-gray-900 flex justify-between items-center">
                 <div className="flex items-center space-x-2 mb-2">
                   <Checkbox

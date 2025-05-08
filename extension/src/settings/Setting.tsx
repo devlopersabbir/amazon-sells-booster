@@ -1,15 +1,16 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Sidebar, { Props } from "./_components/sidebar.js";
-import { useGroups } from "../hooks/useGroups.js";
 import { AsinGroup } from "../@types/index.js";
 import DisplayGroup from "./_components/display-group.js";
 import { toast } from "sonner";
 import CreatePrice from "./_components/create-price.js";
 import CreateGroup from "./_components/create-group.js";
 import Browser from "webextension-polyfill";
+import { useAppSettings } from "../hooks/useAppSettings.js";
 
 const Setting = () => {
-  const { groups, addGroup, updateGroup, fetchGroups } = useGroups();
+  // const { groups, addGroup, updateGroup, fetchGroups } = useGroups();
+  const { groups, addGroup, updateGroup } = useAppSettings();
   const [selectedGroup, setSelectedGroup] = useState<AsinGroup | null>(null);
   const [isEditing, setIsEditing] = useState(false);
   const [asin, setAsin] = useState("");
@@ -17,12 +18,12 @@ const Setting = () => {
   const [activeMenuItem, setActiveMenuItem] =
     useState<Props["activeMenuItem"]>("groups");
 
-  useEffect(() => {
-    // fetch data from storage
-    (async () => {
-      await fetchGroups();
-    })();
-  }, [activeMenuItem]);
+  // useEffect(() => {
+  //   // fetch data from storage
+  //   (async () => {
+  //     await fetchGroups();
+  //   })();
+  // }, [activeMenuItem]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -74,7 +75,7 @@ const Setting = () => {
           </h1>
 
           <div className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700 max-h-[80vh] overflow-y-auto scroll-smooth">
-            {activeMenuItem === "groups" && !groups.length ? (
+            {activeMenuItem === "groups" && !groups?.length ? (
               <div className="flex justify-center items-center w-full flex-col">
                 <img
                   src={Browser.runtime.getURL("/icon/no-data.svg")}
@@ -85,7 +86,7 @@ const Setting = () => {
               </div>
             ) : null}
 
-            {activeMenuItem === "groups" && !selectedGroup ? (
+            {activeMenuItem === "groups" && !selectedGroup && groups ? (
               <DisplayGroup
                 groups={groups}
                 setAsin={setAsin}

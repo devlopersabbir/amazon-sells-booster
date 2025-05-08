@@ -1,4 +1,3 @@
-// hooks/useGroups.ts
 import { useEffect, useState } from "react";
 import { AsinGroup } from "../@types/index.js";
 import { storageAPI } from "../services/storage-service.js";
