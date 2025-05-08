@@ -7,7 +7,6 @@ export function handleKatInputUpdate({
   asins = [],
   isAll = false,
 }: HandlerOptions) {
-  const selector = ".VolusPriceInputComposite-module__priceInputRow--1DG3s";
   const tableSelector = "div.JanusTable-module__tableContentRow--MGDsi";
 
   const parentElements = document.querySelectorAll(tableSelector);
@@ -65,7 +64,7 @@ export function handleKatInputUpdate({
         "div.VolusPriceInputComposite-module__priceInputRow--1DG3s"
       );
       if (priceCell) {
-        const katGroup = element.querySelector("kat-input-group");
+        const katGroup = priceCell.querySelector("kat-input-group");
         const code = katGroup?.textContent?.trim().toUpperCase();
 
         if (!katGroup || !code || !currencyCode.includes(code)) return;

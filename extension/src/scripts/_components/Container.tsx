@@ -17,14 +17,12 @@ import {
   DrawerTitle,
 } from "../../components/ui/drawer.js";
 import { ActionType, AsinGroup } from "../../@types/index.js";
-import { useGroups } from "../../hooks/useGroups.js";
 import { handleKatInputUpdate } from "../index.js";
 import Browser from "webextension-polyfill";
 import { useAppSettings } from "../../hooks/useAppSettings.js";
 import { toast } from "sonner";
 
 const Container = () => {
-  // const { groups, price } = useGroups();
   const { groups, price } = useAppSettings();
   const [open, setOpen] = useState(false);
   const [actionType, setActionType] = useState<ActionType>("increment");
