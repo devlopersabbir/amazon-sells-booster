@@ -48,13 +48,14 @@ const Container = () => {
       (group) => group.asins
     );
     if (!arr) return;
+
     if (actionType === "increment") {
       handleKatInputUpdate({
         type: "increment",
         INC_DEC_VALUE: price,
         asins: arr,
       });
-    } else {
+    } else if (actionType === "decrement") {
       handleKatInputUpdate({
         type: "decrement",
         INC_DEC_VALUE: price,
