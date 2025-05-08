@@ -3,10 +3,12 @@ import { AsinGroup } from "../../@types/index.js";
 import { Edit, Tag, Trash2 } from "lucide-react";
 import { useGroups } from "../../hooks/useGroups.js";
 import { toast } from "sonner";
+import { Props } from "./sidebar.js";
 
-type Props = {
+type DisplayProps = {
   groups: AsinGroup[];
   setSelectedGroup: Dispatch<SetStateAction<AsinGroup | null>>;
+  setActiveMenuItem: Dispatch<SetStateAction<Props["activeMenuItem"]>>;
   setIsEditing: Dispatch<SetStateAction<boolean>>;
   setGroupName: Dispatch<SetStateAction<string>>;
   setAsin: Dispatch<SetStateAction<string>>;
@@ -17,12 +19,16 @@ const DisplayGroup = ({
   setIsEditing,
   setGroupName,
   setAsin,
-}: Props) => {
+  setActiveMenuItem,
+}: DisplayProps) => {
   const { deleteGroup } = useGroups();
   return (
     <div className="space-y-6">
       {!groups ? (
-        <p className="text-gray-400">No groups yet. Add your first group!</p>
+        <>
+          <p className="text-gray-400">No groups yet. Add your first group!</p>
+          <h1>hello</h1>
+        </>
       ) : (
         groups &&
         groups.map((group) => (
@@ -41,6 +47,7 @@ const DisplayGroup = ({
                     setIsEditing(true);
                     setGroupName(group.group_name);
                     setAsin(group.asins.join(", "));
+                    setActiveMenuItem("update");
                   }}
                   className="p-1.5 bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
                   title="Edit group"
@@ -51,6 +58,7 @@ const DisplayGroup = ({
                   onClick={async () => {
                     if (!group.id) return;
                     await deleteGroup(group.id);
+                    setActiveMenuItem("groups");
                     toast.info("Group deleted!");
                   }}
                   className="p-1.5 bg-red-600 rounded-md hover:bg-red-700 transition-colors"

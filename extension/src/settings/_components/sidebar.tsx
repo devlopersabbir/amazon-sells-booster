@@ -1,13 +1,14 @@
 import { Dispatch, SetStateAction, useState } from "react";
 import { MonitorCheck, PlusCircle, Users, X } from "lucide-react";
 
+export const menuItem = ["groups", "add", "update", "price"] as const;
+export type MenuItem = (typeof menuItem)[number];
 export type Props = {
-  activeMenuItem: "groups" | "add" | "price";
-  setActiveMenuItem: Dispatch<SetStateAction<"groups" | "add" | "price">>;
+  activeMenuItem: MenuItem;
+  setActiveMenuItem: Dispatch<SetStateAction<MenuItem>>;
 };
 const Sidebar = ({ activeMenuItem, setActiveMenuItem }: Props) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  // const [activeMenuItem, setActiveMenuItem] = useState("groups"); // "groups" or "add"
 
   return (
     <div>
@@ -25,7 +26,10 @@ const Sidebar = ({ activeMenuItem, setActiveMenuItem }: Props) => {
         } md:translate-x-0 transition duration-200 ease-in-out z-30 w-64 bg-gray-800 border-r border-gray-700`}
       >
         <div className="p-6">
-          <h1 className="text-xl font-bold mb-8 text-gray-100">
+          <h1
+            className="text-xl font-bold mb-8 text-gray-100 cursor-pointer"
+            onClick={() => setActiveMenuItem("groups")}
+          >
             Inventory Auto Fill
           </h1>
 

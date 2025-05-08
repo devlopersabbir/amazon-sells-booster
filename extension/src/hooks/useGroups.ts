@@ -15,6 +15,7 @@ export function useGroups() {
     } else {
       setGroups([]);
     }
+    return data.group;
   };
   const fetchPrice = async () => {
     const data = await storageAPI.get(["price"]);
