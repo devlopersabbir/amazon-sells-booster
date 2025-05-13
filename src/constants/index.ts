@@ -12,3 +12,4 @@ export const currencyCode = [
   "CHF",
   "USD",
 ];
+export const tableSelector = "div.JanusTable-module__tableContentRow--MGDsi";

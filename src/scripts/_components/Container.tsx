@@ -16,7 +16,12 @@ import {
   DrawerHeader,
   DrawerTitle,
 } from "../../components/ui/drawer.js";
-import { ActionType, AsinGroup } from "../../@types/index.js";
+import {
+  ActionType,
+  AsinGroup,
+  TaskType,
+  taskTypeArray,
+} from "../../@types/index.js";
 import { handleKatInputUpdate } from "../index.js";
 import Browser from "webextension-polyfill";
 import { useAppSettings } from "../../hooks/useAppSettings.js";
@@ -28,41 +33,24 @@ const Container = () => {
   const [actionType, setActionType] = useState<ActionType>("increment");
   const [selectedGroups, setSelectedGroups] = useState<AsinGroup[]>([]);
   const [allSelected, setAllSelected] = useState(false);
-  const [isGroup, setIsGroup] = useState(false);
+  const [taskType, setTaskType] = useState<TaskType>("asins");
 
   const handleConfirm = () => {
     if (!price) return toast.error("No price found!");
-    if (isGroup) {
-      handleKatInputUpdate({
-        type: actionType,
-        INC_DEC_VALUE: price,
-        isAll: true,
-      });
-      setOpen(false);
-      return;
-    }
+    const arr: AsinGroup["asins"] | [] =
+      selectedGroups && selectedGroups.flatMap((group) => group.asins);
 
-    const arr: AsinGroup["asins"] = selectedGroups.flatMap(
-      (group) => group.asins
-    );
-    if (!arr) return;
-
-    if (actionType === "increment") {
-      handleKatInputUpdate({
-        type: "increment",
-        INC_DEC_VALUE: price,
-        asins: arr,
-      });
-    } else if (actionType === "decrement") {
-      handleKatInputUpdate({
-        type: "decrement",
-        INC_DEC_VALUE: price,
-        asins: arr,
-      });
-    }
+    handleKatInputUpdate({
+      type: actionType,
+      INC_DEC_VALUE: price,
+      taskType,
+      asins: arr || [],
+    });
+    toast.info(`Action type (${actionType}) and task type (${taskType})`);
     setOpen(false);
   };
-
+  console.log("tasktype: ", taskType);
+  console.log("selectedGroup", selectedGroups);
   return (
     <div className="flex gap-2">
       <Button
@@ -117,20 +105,21 @@ const Container = () => {
           <div className="px-4 py-2 max-h-[60vh] overflow-y-auto">
             <div className="w-full justify-end items-end">
               <div className="flex flex-row space-x-2 mb-2 justify-end items-end">
-                <Checkbox
-                  id="without-condition"
-                  checked={isGroup}
-                  disabled={selectedGroups.length > 0}
-                  onCheckedChange={(checked: boolean) => {
-                    setIsGroup(!!checked);
-                  }}
-                />
-                <label
-                  htmlFor="without-condition"
-                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                <select
+                  className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 w-auto p-2.5"
+                  onChange={(e) => setTaskType(e.target.value as TaskType)}
+                  defaultValue={taskType}
                 >
-                  Update all
-                </label>
+                  {taskTypeArray.map((task, index) => (
+                    <option
+                      value={task}
+                      key={index}
+                      className="bg-gray-900 text-white"
+                    >
+                      {task.toUpperCase()}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
             {groups && (
@@ -138,8 +127,8 @@ const Container = () => {
                 <div className="flex items-center space-x-2 mb-2">
                   <Checkbox
                     id="select-all-groups"
-                    disabled={isGroup}
                     checked={allSelected}
+                    disabled={taskType === "all"}
                     onCheckedChange={(checked: boolean) => {
                       setAllSelected(checked);
                       setSelectedGroups(checked ? [...groups] : []);
@@ -163,8 +152,8 @@ const Container = () => {
                 >
                   <div className="flex items-center space-x-2 mb-2">
                     <Checkbox
-                      disabled={isGroup}
                       id={`group-${group.id}`}
+                      disabled={taskType === "all"}
                       checked={selectedGroups.some(
                         (selectedGroup) => selectedGroup.id === group.id
                       )}
