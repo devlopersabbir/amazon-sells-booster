@@ -33,24 +33,24 @@ const Container = () => {
   const [actionType, setActionType] = useState<ActionType>("increment");
   const [selectedGroups, setSelectedGroups] = useState<AsinGroup[]>([]);
   const [allSelected, setAllSelected] = useState(false);
-  const [taskType, setTaskType] = useState<TaskType>("asins");
+  const [taskType, setTaskType] = useState<TaskType>("Selected ASINs");
 
   const handleConfirm = () => {
     if (!price) return toast.error("No price found!");
     const arr: AsinGroup["asins"] | [] =
       selectedGroups && selectedGroups.flatMap((group) => group.asins);
 
+    if (taskType === "Selected ASINs" && !arr.length)
+      return toast.error("Select any group");
     handleKatInputUpdate({
       type: actionType,
-      INC_DEC_VALUE: price,
+      INC_DEC_VALUE: Number(price),
       taskType,
       asins: arr || [],
     });
     toast.info(`Action type (${actionType}) and task type (${taskType})`);
     setOpen(false);
   };
-  console.log("tasktype: ", taskType);
-  console.log("selectedGroup", selectedGroups);
   return (
     <div className="flex gap-2">
       <Button
@@ -116,7 +116,7 @@ const Container = () => {
                       key={index}
                       className="bg-gray-900 text-white"
                     >
-                      {task.toUpperCase()}
+                      {task}
                     </option>
                   ))}
                 </select>
@@ -128,7 +128,7 @@ const Container = () => {
                   <Checkbox
                     id="select-all-groups"
                     checked={allSelected}
-                    disabled={taskType === "all"}
+                    disabled={taskType === "All ASINs"}
                     onCheckedChange={(checked: boolean) => {
                       setAllSelected(checked);
                       setSelectedGroups(checked ? [...groups] : []);
@@ -153,7 +153,7 @@ const Container = () => {
                   <div className="flex items-center space-x-2 mb-2">
                     <Checkbox
                       id={`group-${group.id}`}
-                      disabled={taskType === "all"}
+                      disabled={taskType === "All ASINs"}
                       checked={selectedGroups.some(
                         (selectedGroup) => selectedGroup.id === group.id
                       )}

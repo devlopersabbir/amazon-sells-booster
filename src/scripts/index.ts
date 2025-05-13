@@ -12,14 +12,14 @@ export function handleKatInputUpdate({
   type,
   INC_DEC_VALUE,
   asins = [],
-  taskType = "asins",
+  taskType = "All ASINs",
 }: HandlerOptions) {
   const parentElements = document.querySelectorAll(tableSelector);
   if (!parentElements.length) return console.log("No parent elements found");
 
   Array.from(parentElements).forEach((element) => {
     switch (taskType) {
-      case "all":
+      case "All ASINs":
         // for all without asins array
         // note: if user select all then user can't select asins
         const priceCell = element.querySelector(
@@ -35,7 +35,7 @@ export function handleKatInputUpdate({
           ? changeKatInputIncrement(katInput, currentValue, INC_DEC_VALUE)
           : changeKatInputDecrement(katInput, currentValue, INC_DEC_VALUE);
 
-      case "asins":
+      case "Selected ASINs":
         // all with selected asins
         const asin = getAsinText(element);
         if (!asin) return console.log("asin text content not found!");
@@ -56,7 +56,7 @@ export function handleKatInputUpdate({
             : changeKatInputDecrement(katInput, currentValue, INC_DEC_VALUE);
         }
 
-      case "lowest-price":
+      case "w.r.t Lowest Price":
         if (asins.length) {
           const asin = getAsinText(element);
           if (!asin) return console.log("asin text content not found!");
@@ -74,7 +74,7 @@ export function handleKatInputUpdate({
             if (!lowestPrice) return console.error("fail to get loweset price");
             type === "increment"
               ? changeKatInputIncrement(katInput, lowestPrice, INC_DEC_VALUE)
-              : null;
+              : changeKatInputDecrement(katInput, lowestPrice, INC_DEC_VALUE);
           }
         } else {
           // without asins
@@ -91,69 +91,8 @@ export function handleKatInputUpdate({
 
           type === "increment"
             ? changeKatInputIncrement(katInput, lowestPrice, INC_DEC_VALUE)
-            : null;
+            : changeKatInputDecrement(katInput, lowestPrice, INC_DEC_VALUE);
         }
     }
-
-    // if (taskType === "asins" && asins.length) {
-    //   if (!asinElement) return console.log("asin element not found on element");
-    //   const asin = asinElement.lastChild?.textContent?.trim();
-    //   if (!asin) return console.log("asin text content not found!");
-
-    //   if (asins.includes(asin)) {
-    //     const priceCell = element.querySelector(
-    //       "div.VolusPriceInputComposite-module__priceInputRow--1DG3s"
-    //     );
-
-    //     if (priceCell) {
-    //       const katInput = getKatInput(priceCell);
-    //       if (!katInput) return console.log("katinput not found");
-    //       const currentValue = parseFloat(katInput.getAttribute("value")!) || 0;
-    //       changeKatInput(katInput, type, currentValue, INC_DEC_VALUE);
-    //     }
-    //   }
-    // } else if (taskType === "lowest-price") {
-    //   if (!asinElement) return console.log("asin element not found on element");
-    //   const asin = asinElement.lastChild?.textContent?.trim();
-    //   if (!asin) return console.log("asin text content not found!");
-
-    //   if (asins.length && asins.includes(asin)) {
-    //     const priceCell = element.querySelector(
-    //       "div.VolusPriceInputComposite-module__priceInputRow--1DG3s"
-    //     );
-
-    //     const lowerPrice = getLowestPrice(element);
-    //     if (priceCell && lowerPrice) {
-    //       const katInput = getKatInput(priceCell);
-    //       if (!katInput) return;
-
-    //       // send the lowerprice to make it increment and dicrement
-    //       changeKatInput(katInput, type, lowerPrice, INC_DEC_VALUE);
-    //     }
-    //   } else {
-    //     // for without asins
-    //     const priceCell = element.querySelector(
-    //       "div.VolusPriceInputComposite-module__priceInputRow--1DG3s"
-    //     );
-
-    //     const lowerPrice = getLowestPrice(element);
-    //     if (priceCell && lowerPrice) {
-    //       const katInput = getKatInput(priceCell);
-    //       if (!katInput) return;
-    //       changeKatInput(katInput, type, lowerPrice, INC_DEC_VALUE);
-    //     }
-    //   }
-    // } else if (taskType === "all") {
-    //   const priceCell = element.querySelector(
-    //     "div.VolusPriceInputComposite-module__priceInputRow--1DG3s"
-    //   );
-    //   if (priceCell) {
-    //     const katInput = getKatInput(priceCell);
-    //     if (!katInput) return;
-
-    //     const currentValue = parseFloat(katInput.getAttribute("value")!) || 0;
-    //     changeKatInput(katInput, type, currentValue, INC_DEC_VALUE);
-    //   }
-    // }
   });
 }

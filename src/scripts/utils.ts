@@ -1,4 +1,3 @@
-import { ActionType } from "../@types/index.js";
 import { currencyCode } from "../constants/index.js";
 
 export const getAsinText = (element: Element) => {

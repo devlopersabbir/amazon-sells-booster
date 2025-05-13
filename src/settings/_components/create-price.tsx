@@ -7,13 +7,13 @@ type PriceProps = {
   setActiveMenuItem: Dispatch<SetStateAction<Props["activeMenuItem"]>>;
 };
 const CreatePrice = ({ setActiveMenuItem }: PriceProps) => {
-  const [price, setPrice] = useState("0.1");
-  const { fetchPrice, price: storagePrice, updatePrice } = useGroups();
+  const [price, setPrice] = useState("");
+  const { fetchPrice, updatePrice } = useGroups();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (price) {
-      await updatePrice(Number(price));
+      await updatePrice(price);
       toast.success("Price update successfully");
       return setActiveMenuItem("groups");
     }
@@ -22,8 +22,8 @@ const CreatePrice = ({ setActiveMenuItem }: PriceProps) => {
   useEffect(() => {
     (async () => {
       const price = await fetchPrice();
-
-      if (price) setPrice(price.toString());
+      console.log("price: ", price);
+      if (price) setPrice(`${price}`);
     })();
   }, []);
   return (

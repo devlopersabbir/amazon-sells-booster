@@ -1,5 +1,9 @@
 export const actionType = ["increment", "decrement"] as const;
-export const taskTypeArray = ["all", "asins", "lowest-price"] as const;
+export const taskTypeArray = [
+  "All ASINs",
+  "Selected ASINs",
+  "w.r.t Lowest Price",
+] as const;
 export type AsinGroup = {
   id: number;
   group_name: string;

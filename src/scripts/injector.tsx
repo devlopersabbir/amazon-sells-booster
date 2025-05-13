@@ -1,5 +1,6 @@
 import { createRoot, Root } from "react-dom/client";
 import Container from "./_components/Container.js";
+import { Toaster } from "sonner";
 
 // state variables
 const container = document.createElement("div");
@@ -15,7 +16,12 @@ function inject() {
 
   if (rootContainer) {
     rootContainer.appendChild(container);
-    root.render(<Container />);
+    root.render(
+      <>
+        <Toaster position="bottom-center" />
+        <Container />
+      </>
+    );
   }
 }
 

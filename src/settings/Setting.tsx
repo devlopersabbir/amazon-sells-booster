@@ -9,7 +9,6 @@ import Browser from "webextension-polyfill";
 import { useAppSettings } from "../hooks/useAppSettings.js";
 
 const Setting = () => {
-  // const { groups, addGroup, updateGroup, fetchGroups } = useGroups();
   const { groups, addGroup, updateGroup } = useAppSettings();
   const [selectedGroup, setSelectedGroup] = useState<AsinGroup | null>(null);
   const [isEditing, setIsEditing] = useState(false);
@@ -17,13 +16,6 @@ const Setting = () => {
   const [groupName, setGroupName] = useState("");
   const [activeMenuItem, setActiveMenuItem] =
     useState<Props["activeMenuItem"]>("groups");
-
-  // useEffect(() => {
-  //   // fetch data from storage
-  //   (async () => {
-  //     await fetchGroups();
-  //   })();
-  // }, [activeMenuItem]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
