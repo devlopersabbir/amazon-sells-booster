@@ -1,7 +1,7 @@
 {
-  "name": "inventory-auto-fill",
+  "name": "amazon-sells-booster",
   "private": true,
-  "version": "0.0.7",
+  "version": "0.0.8",
   "type": "module",
   "scripts": {
     "dev": "rm -rf dist && vite",

@@ -1,0 +1,951 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		341BBF352DE9FFF9004D6D97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341BBF342DE9FFF9004D6D97 /* AppDelegate.swift */; };
+		341BBF372DE9FFF9004D6D97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341BBF362DE9FFF9004D6D97 /* SceneDelegate.swift */; };
+		341BBF3A2DE9FFF9004D6D97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF382DE9FFF9004D6D97 /* LaunchScreen.storyboard */; };
+		341BBF3D2DE9FFF9004D6D97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF3B2DE9FFF9004D6D97 /* Main.storyboard */; };
+		341BBF462DE9FFF9004D6D97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341BBF452DE9FFF9004D6D97 /* AppDelegate.swift */; };
+		341BBF492DE9FFF9004D6D97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF472DE9FFF9004D6D97 /* Main.storyboard */; };
+		341BBF512DE9FFF9004D6D97 /* AmazonSellsBooster Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 341BBF502DE9FFF9004D6D97 /* AmazonSellsBooster Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		341BBF5B2DE9FFF9004D6D97 /* AmazonSellsBooster Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 341BBF5A2DE9FFF9004D6D97 /* AmazonSellsBooster Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		341BBF612DE9FFF9004D6D97 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF242DE9FFF6004D6D97 /* Main.html */; };
+		341BBF622DE9FFF9004D6D97 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF242DE9FFF6004D6D97 /* Main.html */; };
+		341BBF632DE9FFF9004D6D97 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF262DE9FFF6004D6D97 /* Icon.png */; };
+		341BBF642DE9FFF9004D6D97 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF262DE9FFF6004D6D97 /* Icon.png */; };
+		341BBF652DE9FFF9004D6D97 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF272DE9FFF6004D6D97 /* Style.css */; };
+		341BBF662DE9FFF9004D6D97 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF272DE9FFF6004D6D97 /* Style.css */; };
+		341BBF672DE9FFF9004D6D97 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF282DE9FFF6004D6D97 /* Script.js */; };
+		341BBF682DE9FFF9004D6D97 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF282DE9FFF6004D6D97 /* Script.js */; };
+		341BBF692DE9FFF9004D6D97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341BBF292DE9FFF6004D6D97 /* ViewController.swift */; };
+		341BBF6A2DE9FFF9004D6D97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341BBF292DE9FFF6004D6D97 /* ViewController.swift */; };
+		341BBF6B2DE9FFF9004D6D97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF2A2DE9FFF9004D6D97 /* Assets.xcassets */; };
+		341BBF6C2DE9FFF9004D6D97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF2A2DE9FFF9004D6D97 /* Assets.xcassets */; };
+		341BBF6D2DE9FFF9004D6D97 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341BBF2C2DE9FFF9004D6D97 /* SafariWebExtensionHandler.swift */; };
+		341BBF6E2DE9FFF9004D6D97 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341BBF2C2DE9FFF9004D6D97 /* SafariWebExtensionHandler.swift */; };
+		341BBF862DE9FFF9004D6D97 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF802DE9FFF9004D6D97 /* icon.png */; };
+		341BBF872DE9FFF9004D6D97 /* icon-with-shadow.svg in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF812DE9FFF9004D6D97 /* icon-with-shadow.svg */; };
+		341BBF882DE9FFF9004D6D97 /* settings.css in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF822DE9FFF9004D6D97 /* settings.css */; };
+		341BBF892DE9FFF9004D6D97 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF832DE9FFF9004D6D97 /* manifest.json */; };
+		341BBF8A2DE9FFF9004D6D97 /* icon in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF842DE9FFF9004D6D97 /* icon */; };
+		341BBF8B2DE9FFF9004D6D97 /* src in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF852DE9FFF9004D6D97 /* src */; };
+		341BBF8C2DE9FFF9004D6D97 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF802DE9FFF9004D6D97 /* icon.png */; };
+		341BBF8D2DE9FFF9004D6D97 /* icon-with-shadow.svg in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF812DE9FFF9004D6D97 /* icon-with-shadow.svg */; };
+		341BBF8E2DE9FFF9004D6D97 /* settings.css in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF822DE9FFF9004D6D97 /* settings.css */; };
+		341BBF8F2DE9FFF9004D6D97 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF832DE9FFF9004D6D97 /* manifest.json */; };
+		341BBF902DE9FFF9004D6D97 /* icon in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF842DE9FFF9004D6D97 /* icon */; };
+		341BBF912DE9FFF9004D6D97 /* src in Resources */ = {isa = PBXBuildFile; fileRef = 341BBF852DE9FFF9004D6D97 /* src */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		341BBF522DE9FFF9004D6D97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 341BBF1E2DE9FFF6004D6D97 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 341BBF4F2DE9FFF9004D6D97;
+			remoteInfo = "AmazonSellsBooster Extension (iOS)";
+		};
+		341BBF5C2DE9FFF9004D6D97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 341BBF1E2DE9FFF6004D6D97 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 341BBF592DE9FFF9004D6D97;
+			remoteInfo = "AmazonSellsBooster Extension (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		341BBF742DE9FFF9004D6D97 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				341BBF512DE9FFF9004D6D97 /* AmazonSellsBooster Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		341BBF7B2DE9FFF9004D6D97 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				341BBF5B2DE9FFF9004D6D97 /* AmazonSellsBooster Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		341BBF252DE9FFF6004D6D97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
+		341BBF262DE9FFF6004D6D97 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		341BBF272DE9FFF6004D6D97 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		341BBF282DE9FFF6004D6D97 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		341BBF292DE9FFF6004D6D97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		341BBF2A2DE9FFF9004D6D97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		341BBF2C2DE9FFF9004D6D97 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		341BBF312DE9FFF9004D6D97 /* AmazonSellsBooster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmazonSellsBooster.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		341BBF342DE9FFF9004D6D97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		341BBF362DE9FFF9004D6D97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		341BBF392DE9FFF9004D6D97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		341BBF3C2DE9FFF9004D6D97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		341BBF3E2DE9FFF9004D6D97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		341BBF432DE9FFF9004D6D97 /* AmazonSellsBooster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmazonSellsBooster.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		341BBF452DE9FFF9004D6D97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		341BBF482DE9FFF9004D6D97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		341BBF4A2DE9FFF9004D6D97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		341BBF4B2DE9FFF9004D6D97 /* AmazonSellsBooster.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AmazonSellsBooster.entitlements; sourceTree = "<group>"; };
+		341BBF502DE9FFF9004D6D97 /* AmazonSellsBooster Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "AmazonSellsBooster Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		341BBF552DE9FFF9004D6D97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		341BBF5A2DE9FFF9004D6D97 /* AmazonSellsBooster Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "AmazonSellsBooster Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		341BBF5F2DE9FFF9004D6D97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		341BBF602DE9FFF9004D6D97 /* AmazonSellsBooster.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AmazonSellsBooster.entitlements; sourceTree = "<group>"; };
+		341BBF802DE9FFF9004D6D97 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../release/v0.0.8/icon.png; sourceTree = "<group>"; };
+		341BBF812DE9FFF9004D6D97 /* icon-with-shadow.svg */ = {isa = PBXFileReference; lastKnownFileType = text; name = "icon-with-shadow.svg"; path = "../../release/v0.0.8/icon-with-shadow.svg"; sourceTree = "<group>"; };
+		341BBF822DE9FFF9004D6D97 /* settings.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = settings.css; path = ../../release/v0.0.8/settings.css; sourceTree = "<group>"; };
+		341BBF832DE9FFF9004D6D97 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../release/v0.0.8/manifest.json; sourceTree = "<group>"; };
+		341BBF842DE9FFF9004D6D97 /* icon */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icon; path = ../../release/v0.0.8/icon; sourceTree = "<group>"; };
+		341BBF852DE9FFF9004D6D97 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../../release/v0.0.8/src; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		341BBF2E2DE9FFF9004D6D97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		341BBF402DE9FFF9004D6D97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		341BBF4D2DE9FFF9004D6D97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		341BBF572DE9FFF9004D6D97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		341BBF1D2DE9FFF6004D6D97 = {
+			isa = PBXGroup;
+			children = (
+				341BBF222DE9FFF6004D6D97 /* Shared (App) */,
+				341BBF2B2DE9FFF9004D6D97 /* Shared (Extension) */,
+				341BBF332DE9FFF9004D6D97 /* iOS (App) */,
+				341BBF442DE9FFF9004D6D97 /* macOS (App) */,
+				341BBF542DE9FFF9004D6D97 /* iOS (Extension) */,
+				341BBF5E2DE9FFF9004D6D97 /* macOS (Extension) */,
+				341BBF322DE9FFF9004D6D97 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		341BBF222DE9FFF6004D6D97 /* Shared (App) */ = {
+			isa = PBXGroup;
+			children = (
+				341BBF292DE9FFF6004D6D97 /* ViewController.swift */,
+				341BBF2A2DE9FFF9004D6D97 /* Assets.xcassets */,
+				341BBF232DE9FFF6004D6D97 /* Resources */,
+			);
+			path = "Shared (App)";
+			sourceTree = "<group>";
+		};
+		341BBF232DE9FFF6004D6D97 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				341BBF242DE9FFF6004D6D97 /* Main.html */,
+				341BBF262DE9FFF6004D6D97 /* Icon.png */,
+				341BBF272DE9FFF6004D6D97 /* Style.css */,
+				341BBF282DE9FFF6004D6D97 /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		341BBF2B2DE9FFF9004D6D97 /* Shared (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				341BBF7F2DE9FFF9004D6D97 /* Resources */,
+				341BBF2C2DE9FFF9004D6D97 /* SafariWebExtensionHandler.swift */,
+			);
+			path = "Shared (Extension)";
+			sourceTree = "<group>";
+		};
+		341BBF322DE9FFF9004D6D97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				341BBF312DE9FFF9004D6D97 /* AmazonSellsBooster.app */,
+				341BBF432DE9FFF9004D6D97 /* AmazonSellsBooster.app */,
+				341BBF502DE9FFF9004D6D97 /* AmazonSellsBooster Extension.appex */,
+				341BBF5A2DE9FFF9004D6D97 /* AmazonSellsBooster Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		341BBF332DE9FFF9004D6D97 /* iOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				341BBF342DE9FFF9004D6D97 /* AppDelegate.swift */,
+				341BBF362DE9FFF9004D6D97 /* SceneDelegate.swift */,
+				341BBF382DE9FFF9004D6D97 /* LaunchScreen.storyboard */,
+				341BBF3B2DE9FFF9004D6D97 /* Main.storyboard */,
+				341BBF3E2DE9FFF9004D6D97 /* Info.plist */,
+			);
+			path = "iOS (App)";
+			sourceTree = "<group>";
+		};
+		341BBF442DE9FFF9004D6D97 /* macOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				341BBF452DE9FFF9004D6D97 /* AppDelegate.swift */,
+				341BBF472DE9FFF9004D6D97 /* Main.storyboard */,
+				341BBF4A2DE9FFF9004D6D97 /* Info.plist */,
+				341BBF4B2DE9FFF9004D6D97 /* AmazonSellsBooster.entitlements */,
+			);
+			path = "macOS (App)";
+			sourceTree = "<group>";
+		};
+		341BBF542DE9FFF9004D6D97 /* iOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				341BBF552DE9FFF9004D6D97 /* Info.plist */,
+			);
+			path = "iOS (Extension)";
+			sourceTree = "<group>";
+		};
+		341BBF5E2DE9FFF9004D6D97 /* macOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				341BBF5F2DE9FFF9004D6D97 /* Info.plist */,
+				341BBF602DE9FFF9004D6D97 /* AmazonSellsBooster.entitlements */,
+			);
+			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+		341BBF7F2DE9FFF9004D6D97 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				341BBF802DE9FFF9004D6D97 /* icon.png */,
+				341BBF812DE9FFF9004D6D97 /* icon-with-shadow.svg */,
+				341BBF822DE9FFF9004D6D97 /* settings.css */,
+				341BBF832DE9FFF9004D6D97 /* manifest.json */,
+				341BBF842DE9FFF9004D6D97 /* icon */,
+				341BBF852DE9FFF9004D6D97 /* src */,
+			);
+			name = Resources;
+			path = "Shared (Extension)";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		341BBF302DE9FFF9004D6D97 /* AmazonSellsBooster (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 341BBF752DE9FFF9004D6D97 /* Build configuration list for PBXNativeTarget "AmazonSellsBooster (iOS)" */;
+			buildPhases = (
+				341BBF2D2DE9FFF9004D6D97 /* Sources */,
+				341BBF2E2DE9FFF9004D6D97 /* Frameworks */,
+				341BBF2F2DE9FFF9004D6D97 /* Resources */,
+				341BBF742DE9FFF9004D6D97 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				341BBF532DE9FFF9004D6D97 /* PBXTargetDependency */,
+			);
+			name = "AmazonSellsBooster (iOS)";
+			productName = "AmazonSellsBooster (iOS)";
+			productReference = 341BBF312DE9FFF9004D6D97 /* AmazonSellsBooster.app */;
+			productType = "com.apple.product-type.application";
+		};
+		341BBF422DE9FFF9004D6D97 /* AmazonSellsBooster (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 341BBF7C2DE9FFF9004D6D97 /* Build configuration list for PBXNativeTarget "AmazonSellsBooster (macOS)" */;
+			buildPhases = (
+				341BBF3F2DE9FFF9004D6D97 /* Sources */,
+				341BBF402DE9FFF9004D6D97 /* Frameworks */,
+				341BBF412DE9FFF9004D6D97 /* Resources */,
+				341BBF7B2DE9FFF9004D6D97 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				341BBF5D2DE9FFF9004D6D97 /* PBXTargetDependency */,
+			);
+			name = "AmazonSellsBooster (macOS)";
+			productName = "AmazonSellsBooster (macOS)";
+			productReference = 341BBF432DE9FFF9004D6D97 /* AmazonSellsBooster.app */;
+			productType = "com.apple.product-type.application";
+		};
+		341BBF4F2DE9FFF9004D6D97 /* AmazonSellsBooster Extension (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 341BBF712DE9FFF9004D6D97 /* Build configuration list for PBXNativeTarget "AmazonSellsBooster Extension (iOS)" */;
+			buildPhases = (
+				341BBF4C2DE9FFF9004D6D97 /* Sources */,
+				341BBF4D2DE9FFF9004D6D97 /* Frameworks */,
+				341BBF4E2DE9FFF9004D6D97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AmazonSellsBooster Extension (iOS)";
+			productName = "AmazonSellsBooster Extension (iOS)";
+			productReference = 341BBF502DE9FFF9004D6D97 /* AmazonSellsBooster Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		341BBF592DE9FFF9004D6D97 /* AmazonSellsBooster Extension (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 341BBF782DE9FFF9004D6D97 /* Build configuration list for PBXNativeTarget "AmazonSellsBooster Extension (macOS)" */;
+			buildPhases = (
+				341BBF562DE9FFF9004D6D97 /* Sources */,
+				341BBF572DE9FFF9004D6D97 /* Frameworks */,
+				341BBF582DE9FFF9004D6D97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AmazonSellsBooster Extension (macOS)";
+			productName = "AmazonSellsBooster Extension (macOS)";
+			productReference = 341BBF5A2DE9FFF9004D6D97 /* AmazonSellsBooster Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		341BBF1E2DE9FFF6004D6D97 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					341BBF302DE9FFF9004D6D97 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					341BBF422DE9FFF9004D6D97 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					341BBF4F2DE9FFF9004D6D97 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					341BBF592DE9FFF9004D6D97 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 341BBF212DE9FFF6004D6D97 /* Build configuration list for PBXProject "AmazonSellsBooster" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 341BBF1D2DE9FFF6004D6D97;
+			productRefGroup = 341BBF322DE9FFF9004D6D97 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				341BBF302DE9FFF9004D6D97 /* AmazonSellsBooster (iOS) */,
+				341BBF422DE9FFF9004D6D97 /* AmazonSellsBooster (macOS) */,
+				341BBF4F2DE9FFF9004D6D97 /* AmazonSellsBooster Extension (iOS) */,
+				341BBF592DE9FFF9004D6D97 /* AmazonSellsBooster Extension (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		341BBF2F2DE9FFF9004D6D97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				341BBF632DE9FFF9004D6D97 /* Icon.png in Resources */,
+				341BBF3A2DE9FFF9004D6D97 /* LaunchScreen.storyboard in Resources */,
+				341BBF612DE9FFF9004D6D97 /* Main.html in Resources */,
+				341BBF672DE9FFF9004D6D97 /* Script.js in Resources */,
+				341BBF6B2DE9FFF9004D6D97 /* Assets.xcassets in Resources */,
+				341BBF3D2DE9FFF9004D6D97 /* Main.storyboard in Resources */,
+				341BBF652DE9FFF9004D6D97 /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		341BBF412DE9FFF9004D6D97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				341BBF642DE9FFF9004D6D97 /* Icon.png in Resources */,
+				341BBF662DE9FFF9004D6D97 /* Style.css in Resources */,
+				341BBF492DE9FFF9004D6D97 /* Main.storyboard in Resources */,
+				341BBF682DE9FFF9004D6D97 /* Script.js in Resources */,
+				341BBF6C2DE9FFF9004D6D97 /* Assets.xcassets in Resources */,
+				341BBF622DE9FFF9004D6D97 /* Main.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		341BBF4E2DE9FFF9004D6D97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				341BBF8F2DE9FFF9004D6D97 /* manifest.json in Resources */,
+				341BBF902DE9FFF9004D6D97 /* icon in Resources */,
+				341BBF8E2DE9FFF9004D6D97 /* settings.css in Resources */,
+				341BBF912DE9FFF9004D6D97 /* src in Resources */,
+				341BBF8C2DE9FFF9004D6D97 /* icon.png in Resources */,
+				341BBF8D2DE9FFF9004D6D97 /* icon-with-shadow.svg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		341BBF582DE9FFF9004D6D97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				341BBF892DE9FFF9004D6D97 /* manifest.json in Resources */,
+				341BBF8A2DE9FFF9004D6D97 /* icon in Resources */,
+				341BBF882DE9FFF9004D6D97 /* settings.css in Resources */,
+				341BBF8B2DE9FFF9004D6D97 /* src in Resources */,
+				341BBF862DE9FFF9004D6D97 /* icon.png in Resources */,
+				341BBF872DE9FFF9004D6D97 /* icon-with-shadow.svg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		341BBF2D2DE9FFF9004D6D97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				341BBF692DE9FFF9004D6D97 /* ViewController.swift in Sources */,
+				341BBF352DE9FFF9004D6D97 /* AppDelegate.swift in Sources */,
+				341BBF372DE9FFF9004D6D97 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		341BBF3F2DE9FFF9004D6D97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				341BBF6A2DE9FFF9004D6D97 /* ViewController.swift in Sources */,
+				341BBF462DE9FFF9004D6D97 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		341BBF4C2DE9FFF9004D6D97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				341BBF6D2DE9FFF9004D6D97 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		341BBF562DE9FFF9004D6D97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				341BBF6E2DE9FFF9004D6D97 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		341BBF532DE9FFF9004D6D97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 341BBF4F2DE9FFF9004D6D97 /* AmazonSellsBooster Extension (iOS) */;
+			targetProxy = 341BBF522DE9FFF9004D6D97 /* PBXContainerItemProxy */;
+		};
+		341BBF5D2DE9FFF9004D6D97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 341BBF592DE9FFF9004D6D97 /* AmazonSellsBooster Extension (macOS) */;
+			targetProxy = 341BBF5C2DE9FFF9004D6D97 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		341BBF242DE9FFF6004D6D97 /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				341BBF252DE9FFF6004D6D97 /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		341BBF382DE9FFF9004D6D97 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				341BBF392DE9FFF9004D6D97 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		341BBF3B2DE9FFF9004D6D97 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				341BBF3C2DE9FFF9004D6D97 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		341BBF472DE9FFF9004D6D97 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				341BBF482DE9FFF9004D6D97 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		341BBF6F2DE9FFF9004D6D97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		341BBF702DE9FFF9004D6D97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		341BBF722DE9FFF9004D6D97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "AmazonSellsBooster Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.AmazonSellsBooster.Extension;
+				PRODUCT_NAME = "AmazonSellsBooster Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		341BBF732DE9FFF9004D6D97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "AmazonSellsBooster Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.AmazonSellsBooster.Extension;
+				PRODUCT_NAME = "AmazonSellsBooster Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		341BBF762DE9FFF9004D6D97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = AmazonSellsBooster;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.AmazonSellsBooster;
+				PRODUCT_NAME = AmazonSellsBooster;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		341BBF772DE9FFF9004D6D97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = AmazonSellsBooster;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.AmazonSellsBooster;
+				PRODUCT_NAME = AmazonSellsBooster;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		341BBF792DE9FFF9004D6D97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/AmazonSellsBooster.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "AmazonSellsBooster Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.AmazonSellsBooster.Extension;
+				PRODUCT_NAME = "AmazonSellsBooster Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		341BBF7A2DE9FFF9004D6D97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/AmazonSellsBooster.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "AmazonSellsBooster Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.AmazonSellsBooster.Extension;
+				PRODUCT_NAME = "AmazonSellsBooster Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		341BBF7D2DE9FFF9004D6D97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/AmazonSellsBooster.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = AmazonSellsBooster;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.AmazonSellsBooster;
+				PRODUCT_NAME = AmazonSellsBooster;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		341BBF7E2DE9FFF9004D6D97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/AmazonSellsBooster.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = AmazonSellsBooster;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.AmazonSellsBooster;
+				PRODUCT_NAME = AmazonSellsBooster;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		341BBF212DE9FFF6004D6D97 /* Build configuration list for PBXProject "AmazonSellsBooster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				341BBF6F2DE9FFF9004D6D97 /* Debug */,
+				341BBF702DE9FFF9004D6D97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		341BBF712DE9FFF9004D6D97 /* Build configuration list for PBXNativeTarget "AmazonSellsBooster Extension (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				341BBF722DE9FFF9004D6D97 /* Debug */,
+				341BBF732DE9FFF9004D6D97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		341BBF752DE9FFF9004D6D97 /* Build configuration list for PBXNativeTarget "AmazonSellsBooster (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				341BBF762DE9FFF9004D6D97 /* Debug */,
+				341BBF772DE9FFF9004D6D97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		341BBF782DE9FFF9004D6D97 /* Build configuration list for PBXNativeTarget "AmazonSellsBooster Extension (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				341BBF792DE9FFF9004D6D97 /* Debug */,
+				341BBF7A2DE9FFF9004D6D97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		341BBF7C2DE9FFF9004D6D97 /* Build configuration list for PBXNativeTarget "AmazonSellsBooster (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				341BBF7D2DE9FFF9004D6D97 /* Debug */,
+				341BBF7E2DE9FFF9004D6D97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 341BBF1E2DE9FFF6004D6D97 /* Project object */;
+}
