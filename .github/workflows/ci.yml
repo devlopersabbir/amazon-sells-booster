@@ -1,0 +1,16 @@
+name: 🎇 Build, Release, and Publish Extension 🎉
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: pring something
+        run: echo 'sabbir'
