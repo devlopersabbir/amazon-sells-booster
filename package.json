@@ -7,8 +7,8 @@
   "scripts": {
     "dev": "rm -rf dist && vite",
     "build": "tsc && vite build",
-    "zip:chrome": "bun run build:chrome && tsx ./zip.ts",
-    "zip:firefox": "bun run build:firefox && tsx ./zip.ts",
+    "zip:chrome": "npm run build:chrome && tsx ./zip.ts",
+    "zip:firefox": "npm run build:firefox && tsx ./zip.ts",
     "build:chrome": "cross-env TARGET=chrome tsc && vite build",
     "build:firefox": "cross-env TARGET=firefox tsc && vite build"
   },
