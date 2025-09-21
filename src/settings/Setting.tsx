@@ -70,7 +70,7 @@ const Setting = () => {
             {activeMenuItem === "groups" && !groups?.length ? (
               <div className="flex justify-center items-center w-full flex-col">
                 <img
-                  src={Browser.runtime.getURL("/icon/no-data.svg")}
+                  src={Browser.runtime.getURL("/no-data.svg")}
                   alt="no data"
                   className="w-96"
                 />
