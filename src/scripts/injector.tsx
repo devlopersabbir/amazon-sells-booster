@@ -1,7 +1,6 @@
 import { createRoot, Root } from "react-dom/client";
 import Container from "./_components/Container.js";
 import { Toaster } from "sonner";
-import ConsoleUI from "./_components/ConsoleUI.js";
 
 // state variables
 const container = document.createElement("div");
@@ -24,7 +23,6 @@ function inject() {
       <>
         <Toaster position="bottom-center" />
         <Container />
-        <ConsoleUI />
       </>
     );
   }
